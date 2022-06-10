@@ -1,0 +1,19 @@
+{
+  "name": "se-v3",
+  "version": "1.0.0",
+  "description": "element-theme-se-v3.16",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "patch-package --patch-dir=patches",
+    "build-node": "npx patch-package element-theme-chalk --patch-dir=patches",
+    "build-theme": "et",
+    "build": "npm run build-theme && npm run build-node"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "element-theme-chalk": "2.15.2",
+    "patch-package": "^6.4.7"
+  }
+}

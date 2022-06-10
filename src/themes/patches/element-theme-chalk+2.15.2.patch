@@ -1,0 +1,349 @@
+diff --git a/node_modules/element-theme-chalk/src/button.scss b/node_modules/element-theme-chalk/src/button.scss
+index 52c8767..7915b5d 100644
+--- a/node_modules/element-theme-chalk/src/button.scss
++++ b/node_modules/element-theme-chalk/src/button.scss
+@@ -9,7 +9,7 @@
+   line-height: 1;
+   white-space: nowrap;
+   cursor: pointer;
+-  background: $--button-default-background-color;
++  background:$--color-primary;
+   border: $--border-base;
+   border-color: $--button-default-border-color;
+   color: $--button-default-font-color;
+@@ -35,8 +35,8 @@
+   }
+ 
+   &:active {
+-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++    // color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++    // border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+     outline: none;
+   }
+ 
+@@ -60,15 +60,15 @@
+ 
+     &:active {
+       background: $--color-white;
+-      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++      // border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++      // color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+       outline: none;
+     }
+   }
+ 
+   @include when(active) {
+-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++    // color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++    // border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+   }
+ 
+   @include when(disabled) {
+@@ -122,19 +122,19 @@
+     padding: $--button-padding-vertical;
+   }
+   @include m(primary) {
+-    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
++    // @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+   }
+   @include m(success) {
+-    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
++    // @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+   }
+   @include m(warning) {
+-    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
++    // @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+   }
+   @include m(danger) {
+-    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
++    // @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+   }
+   @include m(info) {
+-    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
++    // @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+   }
+   @include m(medium) {
+     @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+@@ -163,12 +163,12 @@
+ 
+     &:hover,
+     &:focus {
+-      color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
++      // color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+       border-color: transparent;
+       background-color: transparent;
+     }
+     &:active {
+-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++      // color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+       border-color: transparent;
+       background-color: transparent;
+     }
+diff --git a/node_modules/element-theme-chalk/src/common/var.scss b/node_modules/element-theme-chalk/src/common/var.scss
+index 551dbe6..18a0999 100644
+--- a/node_modules/element-theme-chalk/src/common/var.scss
++++ b/node_modules/element-theme-chalk/src/common/var.scss
+@@ -16,20 +16,20 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
+ /* Color
+ -------------------------- */
+ /// color|1|Brand Color|0
+-$--color-primary: #409EFF !default;
++$--color-primary: var(--color-bg) !default;
+ /// color|1|Background Color|4
+ $--color-white: #FFFFFF !default;
+ /// color|1|Background Color|4
+ $--color-black: #000000 !default;
+-$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+-$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+-$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+-$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+-$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+-$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+-$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+-$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
++$--color-primary-light-1: mix($--color-white, black, 10%) !default; /* 53a8ff */
++$--color-primary-light-2: mix($--color-white, black, 20%) !default; /* 66b1ff */
++$--color-primary-light-3: mix($--color-white, black, 30%) !default; /* 79bbff */
++$--color-primary-light-4: mix($--color-white, black, 40%) !default; /* 8cc5ff */
++$--color-primary-light-5: mix($--color-white, black, 50%) !default; /* a0cfff */
++$--color-primary-light-6: mix($--color-white, black, 60%) !default; /* b3d8ff */
++$--color-primary-light-7: mix($--color-white, black, 70%) !default; /* c6e2ff */
++$--color-primary-light-8: mix($--color-white, black, 80%) !default; /* d9ecff */
++$--color-primary-light-9: mix($--color-white, black, 90%) !default; /* ecf5ff */
+ /// color|1|Functional Color|1
+ $--color-success: #67C23A !default;
+ /// color|1|Functional Color|1
+@@ -426,8 +426,6 @@ $--input-font-size: $--font-size-base !default;
+ /// color||Color|0
+ $--input-font-color: $--color-text-regular !default;
+ /// height||Other|4
+-$--input-width: 140px !default;
+-/// height||Other|4
+ $--input-height: 40px !default;
+ $--input-border: $--border-base !default;
+ $--input-border-color: $--border-color-base !default;
+@@ -759,7 +757,7 @@ $--card-padding: 20px !default;
+ $--slider-main-background-color: $--color-primary !default;
+ /// color||Color|0
+ $--slider-runway-background-color: $--border-color-light !default;
+-$--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
++$--slider-button-hover-color: mix(white, black, 97%) !default;
+ $--slider-stop-background-color: $--color-white !default;
+ $--slider-disable-color: $--color-text-placeholder !default;
+ $--slider-margin: 16px 0 !default;
+@@ -964,6 +962,42 @@ $--avatar-medium-size: 36px !default;
+ /// size|1|Avatar Size|3
+ $--avatar-small-size: 28px !default;
+ 
++/* Empty
++-------------------------- */
++$--empty-padding: 40px 0 !default;
++$--empty-image-width: 160px !default;
++$--empty-description-margin-top: 20px !default;
++$--empty-bottom-margin-top: 20px !default;
++
++/* Descriptions
++-------------------------- */
++$--descriptions-header-margin-bottom: 20px !default;
++$--descriptions-title-font-size: 16px !default;
++$--descriptions-table-border: 1px solid $--border-color-lighter !default;
++$--descriptions-item-bordered-label-background: #fafafa !default;
++
++/* Skeleton 
++--------------------------*/
++$--skeleton-color: #f2f2f2 !default;
++$--skeleton-to-color: #e6e6e6 !default;
++
++/* Svg
++--------------- */
++$--svg-monochrome-grey: #DCDDE0 !default;
++
++/* Result
++-------------------------- */
++$--result-padding: 40px 30px !default;
++$--result-icon-font-size: 64px !default;
++$--result-title-font-size: 20px !default;
++$--result-title-margin-top: 20px !default;
++$--result-subtitle-margin-top: 10px !default;
++$--result-extra-margin-top: 30px !default;
++$--result-info-color: $--color-info !default;
++$--result-success-color: $--color-success !default;
++$--result-warning-color: $--color-warning !default;
++$--result-danger-color: $--color-danger !default;
++
+ /* Break-point
+ --------------------------*/
+ $--sm: 768px !default;
+diff --git a/node_modules/element-theme-chalk/src/link.scss b/node_modules/element-theme-chalk/src/link.scss
+index 704379f..9adfb8e 100644
+--- a/node_modules/element-theme-chalk/src/link.scss
++++ b/node_modules/element-theme-chalk/src/link.scss
+@@ -62,13 +62,13 @@ $typeMap: (
+     &.el-link--#{$type} {
+       color: $primaryColor;
+       &:hover {
+-        color: mix($primaryColor, $--color-white, 80%)
++        color: $primaryColor
+       }
+       &:after {
+         border-color: $primaryColor
+       }
+       @include when(disabled) {
+-        color: mix($primaryColor, $--color-white, 50%)
++        color: $primaryColor
+       }
+       @include when(underline) {
+         &:hover:after {
+diff --git a/node_modules/element-theme-chalk/src/reset.scss b/node_modules/element-theme-chalk/src/reset.scss
+index a13e0de..d405971 100644
+--- a/node_modules/element-theme-chalk/src/reset.scss
++++ b/node_modules/element-theme-chalk/src/reset.scss
+@@ -14,11 +14,11 @@ a {
+ 
+   &:hover,
+   &:focus {
+-    color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
++    color:  $--color-primary;
+   }
+ 
+   &:active {
+-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
++    color:  $--color-primary;
+   }
+ }
+ 
+diff --git a/node_modules/element-theme-chalk/src/tag.scss b/node_modules/element-theme-chalk/src/tag.scss
+index 1622902..17b1ecc 100644
+--- a/node_modules/element-theme-chalk/src/tag.scss
++++ b/node_modules/element-theme-chalk/src/tag.scss
+@@ -2,90 +2,90 @@
+ @import "common/var";
+ 
+ @mixin genTheme($backgroundColorWeight, $borderColorWeight, $fontColorWeight, $hoverColorWeight) {
+-  background-color: mix($--tag-primary-color, $--color-white, $backgroundColorWeight);
+-  border-color: mix($--tag-primary-color, $--color-white, $borderColorWeight);
+-  color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
++  background-color: $--tag-primary-color;
++  border-color: $--tag-primary-color;
++  color: $--color-white;
+ 
+   @include when(hit) {
+     border-color: $--tag-primary-color;
+   }
+ 
+   .el-tag__close {
+-    color: mix($--tag-primary-color, $--color-white, $fontColorWeight);
++    color: $--color-white;
+     &:hover {
+       color: $--color-white;
+-      background-color: mix($--tag-primary-color, $--color-white, $hoverColorWeight);
++      background-color: $--tag-primary-color;
+     }
+   }
+ 
+   &.el-tag--info {
+-    background-color: mix($--tag-info-color, $--color-white, $backgroundColorWeight);
+-    border-color: mix($--tag-info-color, $--color-white, $borderColorWeight);
+-    color: mix($--tag-info-color, $--color-white, $fontColorWeight);
++    background-color: $--tag-info-color;
++    border-color: $--tag-info-color;
++    color: $--color-white;
+ 
+     @include when(hit) {
+       border-color: $--tag-info-color;
+     }
+ 
+     .el-tag__close {
+-      color: mix($--tag-info-color, $--color-white, $fontColorWeight);
++      color: $--tag-info-color;
+       &:hover {
+         color: $--color-white;
+-        background-color: mix($--tag-info-color, $--color-white, $hoverColorWeight);
++        background-color: $--tag-info-color;
+       }
+     }
+   }
+ 
+   &.el-tag--success {
+-    background-color: mix($--tag-success-color, $--color-white, $backgroundColorWeight);
+-    border-color: mix($--tag-success-color, $--color-white, $borderColorWeight);
+-    color: mix($--tag-success-color, $--color-white, $fontColorWeight);
++    background-color: $--tag-success-color;
++    border-color: $--tag-success-color;
++    color: $--color-white;
+ 
+     @include when(hit) {
+       border-color: $--tag-success-color;
+     }
+ 
+     .el-tag__close {
+-      color: mix($--tag-success-color, $--color-white, $fontColorWeight);
++      color: $--tag-success-color;
+       &:hover {
+         color: $--color-white;
+-        background-color: mix($--tag-success-color, $--color-white, $hoverColorWeight);
++        background-color: $--tag-success-color;
+       }
+     }
+   }
+ 
+   &.el-tag--warning {
+-    background-color: mix($--tag-warning-color, $--color-white, $backgroundColorWeight);
+-    border-color: mix($--tag-warning-color, $--color-white, $borderColorWeight);
+-    color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
++    background-color: $--tag-warning-color;
++    border-color:$--tag-warning-color;
++    color: $--color-white;
+ 
+     @include when(hit) {
+       border-color: $--tag-warning-color;
+     }
+ 
+     .el-tag__close {
+-      color: mix($--tag-warning-color, $--color-white, $fontColorWeight);
++      color: $--tag-warning-color,;
+       &:hover {
+         color: $--color-white;
+-        background-color: mix($--tag-warning-color, $--color-white, $hoverColorWeight);
++        background-color: $--tag-warning-color;
+       }
+     }
+   }
+ 
+   &.el-tag--danger {
+-    background-color: mix($--tag-danger-color, $--color-white, $backgroundColorWeight);
+-    border-color: mix($--tag-danger-color, $--color-white, $borderColorWeight);
+-    color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
++    background-color: $--tag-danger-color;
++    border-color: $--tag-danger-color;
++    color: $--color-white;
+ 
+     @include when(hit) {
+       border-color: $--tag-danger-color;
+     }
+ 
+     .el-tag__close {
+-      color: mix($--tag-danger-color, $--color-white, $fontColorWeight);
++      color: $--tag-danger-color;
+       &:hover {
+         color: $--color-white;
+-        background-color: mix($--tag-danger-color, $--color-white, $hoverColorWeight);
++        background-color: $--tag-danger-color;
+       }
+     }
+   }
+diff --git a/node_modules/element-theme-chalk/src/tree.scss b/node_modules/element-theme-chalk/src/tree.scss
+index c3b18de..7b352ea 100644
+--- a/node_modules/element-theme-chalk/src/tree.scss
++++ b/node_modules/element-theme-chalk/src/tree.scss
+@@ -119,5 +119,5 @@
+ }
+ 
+ .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+-  background-color: mix($--color-white, $--color-primary, 92%);
++  background-color: $--color-white;
+ }

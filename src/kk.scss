@@ -1,0 +1,11 @@
+:root {
+  --color-bg:blue;
+  $--aa:blue;
+}
+
+html[data-theme='dark'] {
+  --color-bg:red;
+  $--aa:green;
+}
+
+$--color-bg:#EEEEEE;
